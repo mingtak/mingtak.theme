@@ -1,4 +1,6 @@
 *.html
+*.css
+*.js
 *.pyc
 *.pyo
 *.tmp*
