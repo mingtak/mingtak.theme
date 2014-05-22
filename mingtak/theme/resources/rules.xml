@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <!-- 全域設定 -->
+  <notheme css:if-content="body.userrole-manager" />
+  <notheme css:if-content="#form" />
+  <rules css:if-not-content="body.userrole-manager">
+    <drop css:content="#edit-bar" css:if-content="body.template-edit" />
+  </rules>
+  <replace css:theme="html head title" css:content="html head title" />
+  <merge attributes="class" css:theme="body" css:content="body" />
+  <before css:theme-children="html head" css:content="head meta" />
+<!--  <after css:theme-children="html head" css:content="head script" />
+  <after css:theme-children="html body" css:content=".plone-site-script" /> -->
+
+  <!-- logo -->
+  <replace css:theme="div#mingtak_logo" css:content="div#mingtak_logo"/>
+
+  <!-- nav -->
+  <replace css:theme="div#mingtak_mainmenu"
+           css:content="div#mingtak_mainmenu" />
+
+  <!-- language selector -->
+
+
+  <!-- plone-dmsearch input box -->
+  <replace css:theme-children="#dmsearch" css:content-children="#plone-dmsearch" />
+
+  <!-- footer -->
+  <replace css:theme="footer" css:content="footer" />
+
+  <!-- mingtak_slider -->
+  <replace css:theme="div#mingtak_slider"
+           css:content="div#mingtak_slider" />
+  <drop css:theme="div#mingtak_slider" if-not-path="/" />
+
+  <!-- plone-class-introduction -->
+  <replace css:theme="#promeClassIntro"
+           css:content-children="#promeClassIntro" />
+
+  <!-- promeRowLeft -->
+  <replace css:theme-children="#promeRowLeft"
+           css:content-children="#promeRowLeft" />
+
+  <!-- promeRowMiddle -->
+  <replace css:theme-children="#promeRowMiddle"
+           css:content-children="#promeRowMiddle" />
+
+  <!-- promeSideAdAtHomePage -->
+  <replace css:theme-children="#promeSideAdAtHomePage"
+           css:content="#portal-column-one" />
+
+  <!-- plone-breadcrumbs -->
+
+
+  <!-- plone-content -->
+  <replace css:theme-children="section#mingtak_content"
+           css:content="div#content-core" />
+  <drop css:theme="section#mingtak_content" if-path="/" />
+
+
+  <!-- plone-secript -->
+
+
+  <!-- portal-column-two / sidebar-->
+
+
+  <!-- portal-column-two / edit-bar -->
+
+
+  <!-- plone-content, 404 not found -->
+
+
+  <!-- plone-content, template-seo-context-properties -->
+
+
+
+  <!-- Drop -->
+  <drop css:theme="section#mingtak_about_us" if-not-path="/" />
+
+  <rules> <!-- if-path="/en-us"> -->
+    <theme href="index.html" css:if-content="#visual-portal-wrapper" />
+  </rules>
+
+</rules>

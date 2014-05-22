@@ -16,9 +16,11 @@
 
   <!-- Register a resource directory from which we can deploy static
    resource files. -->
-  <browser:resourceDirectory
+
+  <plone:static name="mingtak.theme" directory="resources" type="theme" />
+<!--  <browser:resourceDirectory
     name="mingtak.theme"
-    directory="resources" />
+    directory="resources" /> -->
 
   <i18n:registerTranslations directory="locales" />
 
